@@ -23,6 +23,6 @@ public class Rankings {
     }
 
     public Movie getMovieByRank(int rank){
-        return topMovies[rank - 1];
+        return new Movie(topMovies[rank - 1]);
     }
 }
