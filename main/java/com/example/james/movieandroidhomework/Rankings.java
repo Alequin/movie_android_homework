@@ -54,6 +54,16 @@ public class Rankings {
         swapMovies(indexOfMovie, indexOfMovie - 1);
     }
 
+    public void decreaseRank(Movie movie){
+        int indexOfMovie = movie.getRanking() - 1;
+        if(indexOfMovie == 0){
+            return;
+        }
+        Movie movieToSwap = getMovieByRank(indexOfMovie);
+        Movie.swapMoviesRankingValues(topMovies[indexOfMovie], topMovies[indexOfMovie+1]);
+        swapMovies(indexOfMovie, indexOfMovie + 1);
+    }
+
     private void swapMovies(int index1, int index2){
         Movie temp = this.topMovies[index1];
         this.topMovies[index1] = this.topMovies[index2];
