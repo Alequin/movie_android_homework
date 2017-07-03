@@ -86,6 +86,15 @@ public class RankingsTest {
     }
 
     @Test
+    public void cannotIncreaseMovieRankingInPositionOne(){
+        final int targetRank = 1;
+        Movie preIncreaseMovie = rankings.getMovieByRank(targetRank);
+        rankings.increaseRank(preIncreaseMovie);
+        Movie postIncreaseMovie = rankings.getMovieByRank(targetRank);
+        assert(preIncreaseMovie.equals(postIncreaseMovie));
+    }
+
+    @Test
     public void canDecreaseMovieRanking(){
         final int targetRank = 5;
         Movie preDecreaseMovie = rankings.getMovieByRank(targetRank);
@@ -94,5 +103,14 @@ public class RankingsTest {
         assert(preDecreaseMovie.getTitle().equals(postDecreaseMovie.getRanking()));
         assertEquals(preDecreaseMovie.getGenre(), postDecreaseMovie.getGenre());
         assertEquals(preDecreaseMovie.getRanking() + 1, postDecreaseMovie.getRanking());
+    }
+
+    @Test
+    public void cannotDecreaseMovieRankingInPositionTen(){
+        final int targetRank = 10;
+        Movie preDecreaseMovie = rankings.getMovieByRank(targetRank);
+        rankings.decreaseRank(preDecreaseMovie);
+        Movie postDecreaseMovie = rankings.getMovieByRank(targetRank);
+        assert(preDecreaseMovie.equals(postDecreaseMovie));
     }
 }
