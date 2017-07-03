@@ -56,7 +56,7 @@ public class MovieTest {
     }
 
     @Test
-    public void cannotSetRankingMoreThan10(){
+    public void cannotSetRankingMoreThanTen(){
         boolean pass = false;
         try {
             movie.setRanking(11);
