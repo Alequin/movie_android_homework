@@ -37,11 +37,11 @@ public class RankingsTest {
     @Test
     public void getMovieByRanking(){
         Movie result = null;
-        result = rankings.getMovieAtRank(1);
+        result = rankings.getMovieByRank(1);
         assert(movies[0].equals(result));
-        result = rankings.getMovieAtRank(2);
+        result = rankings.getMovieByRank(2);
         assert(movies[1].equals(result));
-        result = rankings.getMovieAtRank(3);
+        result = rankings.getMovieByRank(3);
         assert(movies[2].equals(result));
     }
 
