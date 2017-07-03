@@ -54,7 +54,7 @@ public class Rankings {
 
     private void alterRank(Movie movie, boolean increaseRank){
         int indexOfMovie = movie.getRanking() - 1;
-        if(indexOfMovie == 0){
+        if( (indexOfMovie == 0 && increaseRank) || (indexOfMovie == 9 && !increaseRank) ){
             return;
         }
         int swapIndex = increaseRank ? indexOfMovie - 1 : indexOfMovie + 1;
