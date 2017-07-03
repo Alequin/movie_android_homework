@@ -63,4 +63,11 @@ public class RankingsTest {
         rankings.replaceAtRanking(3, extraMovie);
         assert(extraMovie.equals(rankings.getMovieByRank(3)));
     }
+
+    @Test
+    public void canReplaceMovieInLastPlace(){
+        Movie extraMovie = new Movie("12 Angry Men", Genre.DRAMA);
+        rankings.replaceLastPlace(extraMovie);
+        assert(extraMovie.equals(rankings.getMovieByRank(10)));
+    }
 }
