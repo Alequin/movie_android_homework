@@ -85,4 +85,15 @@ public class MovieTest {
         Movie cloneMovie = new Movie(movie);
         assert(movie.equals(cloneMovie));
 ;    }
+
+    @Test
+    public void canSwapRankingsOfTwoMovies(){
+        Movie movie1 = new Movie("The Movie", Genre.ACTION);
+        movie1.setRanking(2);
+        Movie movie2 = new Movie("The Movie agagin", Genre.MYSTERY);
+        movie2.setRanking(3);
+        Movie.swapMoviesRankingValues(movie1, movie2);
+        assertEquals(3, movie1.getRanking());
+        assertEquals(2, movie2.getRanking());
+    }
 }
