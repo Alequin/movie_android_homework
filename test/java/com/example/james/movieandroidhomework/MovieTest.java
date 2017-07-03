@@ -73,4 +73,10 @@ public class MovieTest {
         String result = movie.toString();
         assertEquals(expected, result);
     }
+
+    @Test
+    public void canCompareMovies(){
+        Movie movie2 = movie = new Movie("The Movie", Genre.ACTION);
+        assert(movie.equals(movie2));
+    }
 }

@@ -57,4 +57,10 @@ public class Movie {
         String genreText = this.genre.toString().toLowerCase();
         return "Title - " + title + ", Genre - " + genreText + ", Ranking - " + rankingText;
     }
+
+    public boolean equals(Movie toCompare) {
+        return this.title.equals(toCompare.title) &&
+            this.genre == toCompare.getGenre() &&
+            this.ranking == toCompare.getRanking();
+    }
 }
