@@ -21,6 +21,12 @@ public class Movie {
         this.ranking = toClone.getRanking();
     }
 
+    public static void swapMoviesRankingValues(Movie movie1, Movie movie2){
+        int tempRanking = movie1.getRanking();
+        movie1.setRanking(movie2.getRanking());
+        movie2.setRanking(tempRanking);
+    }
+
     public String getTitle() {
         return title;
     }
