@@ -25,14 +25,18 @@ public class Rankings {
     public Movie getMovieByTitle(String title) {
         for(Movie movie : topMovies){
             if(movie.getTitle().equals(title)){
-                return new Movie(movie);
+                return getClonedMovie(movie);
             }
         }
         return null;
     }
 
     public Movie getMovieByRank(int rank){
-        return new Movie(topMovies[rank - 1]);
+        return getClonedMovie(topMovies[rank - 1]);
+    }
+
+    private Movie getClonedMovie(Movie movie){
+        return new Movie(movie);
     }
 
 }
