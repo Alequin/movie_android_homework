@@ -16,6 +16,11 @@ public class Movie {
         this.setRanking(0);
     }
 
+    public Movie(Movie toClone){
+        this(toClone.getTitle(), toClone.getGenre());
+        this.ranking = toClone.getRanking();
+    }
+
     public String getTitle() {
         return title;
     }
