@@ -71,5 +71,7 @@ public class RankingsTest {
         Movie extraMovie = new Movie("12 Angry Men", Genre.DRAMA);
         rankings.replaceLastPlace(extraMovie);
         assert(extraMovie.equals(rankings.getMovieByRank(10)));
+        assertEquals(10, rankings.getMovieByRank(10).getRanking());
+    }
     }
 }
