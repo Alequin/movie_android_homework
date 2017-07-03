@@ -1,0 +1,24 @@
+Classes to make 
+	- Movie
+	- Rankings
+
+Movie attributes
+	- Title
+	- Genre
+	- Current Ranking
+Movie Methods
+	- Get/Set title
+	- Get/Set genre
+	- Get/Set ranking
+	- toString return all details as string
+	"Title: 'Lord of the Rings', Genre: 'Adventure', Ranking: 1"
+
+Rankings attributes
+	- Movie collection
+	movies ordered by ranking
+
+Ranking methods
+	- get movie with a specific ranking
+	- replace movie in last place
+	- find movie by title in collection
+	- move a title up/down in ranking
