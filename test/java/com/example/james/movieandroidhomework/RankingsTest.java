@@ -84,4 +84,15 @@ public class RankingsTest {
         assertEquals(preIncreaseMovie.getGenre(), postIncreaseMovie.getGenre());
         assertEquals(preIncreaseMovie.getRanking() - 1, postIncreaseMovie.getRanking());
     }
+
+    @Test
+    public void canDecreaseMovieRanking(){
+        final int targetRank = 5;
+        Movie preDecreaseMovie = rankings.getMovieByRank(targetRank);
+        rankings.decreaseRank(preDecreaseMovie);
+        Movie postDecreaseMovie = rankings.getMovieByRank(targetRank + 1);
+        assert(preDecreaseMovie.getTitle().equals(postDecreaseMovie.getRanking()));
+        assertEquals(preDecreaseMovie.getGenre(), postDecreaseMovie.getGenre());
+        assertEquals(preDecreaseMovie.getRanking() + 1, postDecreaseMovie.getRanking());
+    }
 }
