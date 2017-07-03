@@ -13,7 +13,6 @@ public class RankingsTest {
 
     private Rankings rankings;
     private Movie[] movies;
-    private Movie extraMovie;
 
     @Before
     public void setup(){
@@ -30,7 +29,6 @@ public class RankingsTest {
             new Movie("Goodfellas", Genre.DRAMA)
         };
         movies = temp;
-        extraMovie = new Movie("Goodfellas", Genre.DRAMA);
         rankings = new Rankings(movies);
     }
 
@@ -51,6 +49,7 @@ public class RankingsTest {
         Movie result = rankings.getMovieByTitle(title);
         assert(result.equals(movies[0]));
     }
+
     @Test
     public void cannotGetMovieByTitleIfMovieIsNotPresent(){
         String title = "The great movie of movies";
@@ -58,4 +57,10 @@ public class RankingsTest {
         assertEquals(null, result);
     }
 
+    @Test
+    public void canReplaceMovieAtSpecificRanking(){
+        Movie extraMovie = new Movie("12 Angry Men", Genre.DRAMA);
+        rankings.replaceAtRanking(3, extraMovie);
+        assertEquals(extraMovie, rankings.getMovieByRank(3));
+    }
 }
