@@ -79,4 +79,10 @@ public class MovieTest {
         Movie movie2 = movie = new Movie("The Movie", Genre.ACTION);
         assert(movie.equals(movie2));
     }
+
+    @Test
+    public void canCloneMovie(){
+        Movie cloneMovie = new Movie(movie);
+        assert(movie.equals(cloneMovie));
+;    }
 }
