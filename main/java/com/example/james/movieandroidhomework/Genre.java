@@ -16,6 +16,7 @@ enum Genre {
     WAR,
     SCIENCE_FICTION,
     FANTASY,
-    COMEDY
+    COMEDY,
+    MYSTERY
 
 }
