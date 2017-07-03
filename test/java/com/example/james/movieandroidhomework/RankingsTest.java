@@ -61,6 +61,6 @@ public class RankingsTest {
     public void canReplaceMovieAtSpecificRanking(){
         Movie extraMovie = new Movie("12 Angry Men", Genre.DRAMA);
         rankings.replaceAtRanking(3, extraMovie);
-        assertEquals(extraMovie, rankings.getMovieByRank(3));
+        assert(extraMovie.equals(rankings.getMovieByRank(3)));
     }
 }
