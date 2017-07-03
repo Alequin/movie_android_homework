@@ -43,6 +43,12 @@ public class Rankings {
         this.topMovies[rank - 1] = movieToInsert;
     }
 
+    private void swapMovies(int index1, int index2){
+        Movie temp = this.topMovies[index1];
+        this.topMovies[index1] = this.topMovies[index2];
+        this.topMovies[index2] = temp;
+    }
+
     private Movie getClonedMovie(Movie movie){
         return new Movie(movie);
     }
