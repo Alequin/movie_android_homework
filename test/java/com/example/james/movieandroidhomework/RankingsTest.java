@@ -44,7 +44,7 @@ public class RankingsTest {
     }
 
     @Test
-    public void cangetMovieByTitleIfMovieIsPresent(){
+    public void canGetMovieByTitleIfMovieIsPresent(){
         String title = "The Wizard Of Oz";
         Movie result = rankings.getMovieByTitle(title);
         assert(result.equals(movies[0]));
@@ -59,9 +59,11 @@ public class RankingsTest {
 
     @Test
     public void canReplaceMovieAtSpecificRanking(){
+        final int targetRank = 3;
         Movie extraMovie = new Movie("12 Angry Men", Genre.DRAMA);
-        rankings.replaceAtRanking(3, extraMovie);
+        rankings.replaceAtRanking(targetRank, extraMovie);
         assert(extraMovie.equals(rankings.getMovieByRank(3)));
+        assertEquals(targetRank, rankings.getMovieByRank(targetRank).getRanking());
     }
 
     @Test
