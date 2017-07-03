@@ -4,7 +4,7 @@ package com.example.james.movieandroidhomework;
  * Created by james on 03/07/2017.
  */
 
-enum Genre {
+public enum Genre {
 
     DRAMA,
     HORROR,
@@ -17,6 +17,7 @@ enum Genre {
     SCIENCE_FICTION,
     FANTASY,
     COMEDY,
+    ADVENTURE,
     MYSTERY
 
 }
