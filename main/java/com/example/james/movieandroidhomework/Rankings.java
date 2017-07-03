@@ -35,6 +35,9 @@ public class Rankings {
         return getClonedMovie(topMovies[rank - 1]);
     }
 
+    public void replaceLastPlace(Movie extraMovie) {
+        this.replaceAtRanking(10, extraMovie);
+    }
 
     public void replaceAtRanking(int rank, Movie movieToInsert) {
         this.topMovies[rank - 1] = movieToInsert;
