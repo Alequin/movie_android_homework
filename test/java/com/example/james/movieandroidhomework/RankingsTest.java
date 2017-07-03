@@ -45,4 +45,17 @@ public class RankingsTest {
         assert(movies[2].equals(result));
     }
 
+    @Test
+    public void cangetMovieByTitleIfMovieIsPresent(){
+        String title = "The Wizard Of Oz";
+        Movie result = rankings.getMovieByTitle(title);
+        assert(result.equals(movies[0]));
+    }
+    @Test
+    public void cannotGetMovieByTitleIfMovieIsNotPresent(){
+        String title = "The great movie of movies";
+        Movie result = rankings.getMovieByTitle(title);
+        assertEquals(null, result);
+    }
+
 }
