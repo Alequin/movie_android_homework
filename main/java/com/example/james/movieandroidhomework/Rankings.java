@@ -45,29 +45,27 @@ public class Rankings {
     }
 
     public void increaseRank(Movie movie){
-        int indexOfMovie = movie.getRanking() - 1;
-        if(indexOfMovie == 0){
-            return;
-        }
-        Movie movieToSwap = getMovieByRank(indexOfMovie);
-        Movie.swapMoviesRankingValues(topMovies[indexOfMovie], topMovies[indexOfMovie-1]);
-        swapMovies(indexOfMovie, indexOfMovie - 1);
+        alterRank(movie, true);
     }
 
     public void decreaseRank(Movie movie){
+        alterRank(movie, false);
+    }
+
+    private void alterRank(Movie movie, boolean increaseRank){
         int indexOfMovie = movie.getRanking() - 1;
         if(indexOfMovie == 0){
             return;
         }
-        Movie movieToSwap = getMovieByRank(indexOfMovie);
-        Movie.swapMoviesRankingValues(topMovies[indexOfMovie], topMovies[indexOfMovie+1]);
-        swapMovies(indexOfMovie, indexOfMovie + 1);
+        int swapIndex = increaseRank ? indexOfMovie - 1 : indexOfMovie + 1;
+        swapMovies(indexOfMovie, swapIndex);
     }
 
     private void swapMovies(int index1, int index2){
         Movie temp = this.topMovies[index1];
         this.topMovies[index1] = this.topMovies[index2];
         this.topMovies[index2] = temp;
+        Movie.swapMoviesRankingValues(topMovies[index1], topMovies[index2]);
     }
 
     private Movie getClonedMovie(Movie movie){
