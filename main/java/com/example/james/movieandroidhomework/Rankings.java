@@ -40,6 +40,7 @@ public class Rankings {
     }
 
     public void replaceAtRanking(int rank, Movie movieToInsert) {
+        movieToInsert.setRanking(rank);
         this.topMovies[rank - 1] = movieToInsert;
     }
 
