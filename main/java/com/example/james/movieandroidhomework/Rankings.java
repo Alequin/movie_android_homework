@@ -22,7 +22,17 @@ public class Rankings {
         }
     }
 
+    public Movie getMovieByTitle(String title) {
+        for(Movie movie : topMovies){
+            if(movie.getTitle().equals(title)){
+                return new Movie(movie);
+            }
+        }
+        return null;
+    }
+
     public Movie getMovieByRank(int rank){
         return new Movie(topMovies[rank - 1]);
     }
+
 }
