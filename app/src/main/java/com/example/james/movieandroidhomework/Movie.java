@@ -18,7 +18,7 @@ public class Movie {
 
     public Movie(Movie toClone){
         this(toClone.getTitle(), toClone.getGenre());
-        setRanking(toClone.getRanking());
+        this.ranking = toClone.getRankingObj();
     }
 
     public static void swapMoviesRankingValues(Movie movie1, Movie movie2){
@@ -44,7 +44,11 @@ public class Movie {
     }
 
     public int getRanking() {
-        return ranking.get();
+        return this.ranking.get();
+    }
+
+    private MutableInteger getRankingObj(){
+        return this.ranking;
     }
 
     public void setRanking(int ranking) {
