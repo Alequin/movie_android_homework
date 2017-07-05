@@ -6,6 +6,30 @@ package com.example.james.movieandroidhomework;
 
 public class MutableInteger {
 
-    
+    private int value;
 
+    public MutableInteger(int value){
+        this.value = value;
+    }
+
+    public int get() {
+        return value;
+    }
+
+    public void set(int value) {
+        this.value = value;
+    }
+
+    public void plus(int amount){
+        this.value += amount;
+    }
+
+    public void minus(int amount){
+        this.value -= amount;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }
 }

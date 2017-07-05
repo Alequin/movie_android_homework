@@ -8,17 +8,17 @@ public class Movie {
 
     private String title;
     private Genre genre;
-    private int ranking;
+    private MutableInteger ranking;
 
     public Movie(String title, Genre genre){
         this.title = title;
         this.genre = genre;
-        this.setRanking(0);
+        this.ranking = new MutableInteger(0);
     }
 
     public Movie(Movie toClone){
         this(toClone.getTitle(), toClone.getGenre());
-        this.ranking = toClone.getRanking();
+        setRanking(toClone.getRanking());
     }
 
     public static void swapMoviesRankingValues(Movie movie1, Movie movie2){
@@ -44,7 +44,7 @@ public class Movie {
     }
 
     public int getRanking() {
-        return ranking;
+        return ranking.get();
     }
 
     public void setRanking(int ranking) {
@@ -52,7 +52,7 @@ public class Movie {
             String message = "Ranking of " + ranking + " not valid";
             throw new IllegalArgumentException(message);
         }
-        this.ranking = ranking;
+        this.ranking.set(ranking);
     }
 
     public void resetRanking() {
@@ -62,8 +62,8 @@ public class Movie {
     @Override
     public String toString() {
         String rankingText = "no ranking";
-        if(this.ranking != 0){
-            rankingText = Integer.toString(this.ranking);
+        if(this.ranking.get() != 0){
+            rankingText = this.ranking.toString();
         }
         String genreText = this.genre.toString().toLowerCase();
         return "Title - " + title + ", Genre - " + genreText + ", Ranking - " + rankingText;
@@ -72,6 +72,6 @@ public class Movie {
     public boolean equals(Movie toCompare) {
         return this.title.equals(toCompare.title) &&
             this.genre == toCompare.getGenre() &&
-            this.ranking == toCompare.getRanking();
+            this.ranking.equals(toCompare.getRanking());
     }
 }
