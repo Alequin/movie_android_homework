@@ -80,9 +80,7 @@ public class RankingsTest {
         Movie preIncreaseMovie = rankings.getMovieByRank(targetRank);
         rankings.increaseRank(preIncreaseMovie);
         Movie postIncreaseMovie = rankings.getMovieByRank(targetRank - 1);
-        assert(preIncreaseMovie.getTitle().equals(postIncreaseMovie.getRanking()));
-        assertEquals(preIncreaseMovie.getGenre(), postIncreaseMovie.getGenre());
-        assertEquals(preIncreaseMovie.getRanking() - 1, postIncreaseMovie.getRanking());
+        assert(preIncreaseMovie.equals(postIncreaseMovie));
     }
 
     @Test
@@ -100,9 +98,7 @@ public class RankingsTest {
         Movie preDecreaseMovie = rankings.getMovieByRank(targetRank);
         rankings.decreaseRank(preDecreaseMovie);
         Movie postDecreaseMovie = rankings.getMovieByRank(targetRank + 1);
-        assert(preDecreaseMovie.getTitle().equals(postDecreaseMovie.getRanking()));
-        assertEquals(preDecreaseMovie.getGenre(), postDecreaseMovie.getGenre());
-        assertEquals(preDecreaseMovie.getRanking() + 1, postDecreaseMovie.getRanking());
+        assert(preDecreaseMovie.equals(postDecreaseMovie));
     }
 
     @Test
